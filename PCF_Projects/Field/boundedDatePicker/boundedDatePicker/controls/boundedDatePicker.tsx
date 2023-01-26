@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as dayjs from 'dayjs'
 import { DatePicker, DayOfWeek, IDatePickerStrings } from 'office-ui-fabric-react/lib/DatePicker';
 import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
@@ -74,6 +75,10 @@ export const BoundedDatePicker: React.FC<Iprops> = (props) => {
     }
   }
 
+  const onFormatDate = (date?: Date): string => {
+    return date && props.pcfContext.parameters.formatDate.raw ? dayjs(date).format(props.pcfContext.parameters.formatDate.raw) : '';
+  };
+
   const DayPickerStrings: IDatePickerStrings = {
     months: _dateStrings.monthGenitiveNames,
     shortMonths: _dateStrings.abbreviatedMonthGenitiveNames,
@@ -103,6 +108,7 @@ export const BoundedDatePicker: React.FC<Iprops> = (props) => {
           placeholder={"Select a date..."/*_resources.getString("boundedDatePicker_labels_placeholder").trim()*/}
           ariaLabel={"Select a date"/*_resources.getString("boundedDatePicker_labels_ariaplaceholder").trim()*/}
           minDate={_minDate}
+          formatDate={onFormatDate}
           maxDate={_maxDate}
           allowTextInput={false}
           disabled={isDisabled}
