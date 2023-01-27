@@ -95,11 +95,12 @@ export const BoundedDatePicker: React.FC<Iprops> = (props) => {
     isOutOfBoundsErrorMessage: `Select a valid date between  ${_minDate == undefined ? "No limit" : _minDate!?.toLocaleDateString()} - ${_maxDate == undefined ? "No limit" : _maxDate!?.toLocaleDateString()}`,
   };
 
+  console.log("Oppdatert!")
   return (
     <Stack horizontal horizontalAlign="center">
       <Stack.Item>
         <DatePicker
-          initialPickerDate={date}
+          initialPickerDate={date ? date : _minDate}
           value={date}
           className={controlClass.datePicker}
           isRequired={false}
