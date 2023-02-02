@@ -59,6 +59,7 @@ boundedDatepicker is a custom control (PCF) created to allow to the users of Pow
 |i_minDate|Use this parameter to set the minimun available date. You can use a fixed date, map to a field or use **negative** numbers to define a dynamic date (ie. -10 -> today - 10 Days)|`2020-01-01` *(dateAndTime.DateOnly)* or `-10` *(whole.None)* |
 |i_restrictMaximunDate|Use this parameter to enable/disable the minimun date limit on the datepicker control based on the value of **i_maxDate**.|`Enabled` or `Disabled`|
 |i_maxdate|Use this parameter to set the minimun available date. You can use a fixed date, map to a field or use **positive** numbers to define a dynamic date (ie. 10 -> today + 10 Days)|`2020-12-31` *(dateAndTime.DateOnly)* or `10` *(whole.None)* |
+|i_formatDate|Use this parameter to set the date format for the date picker|Default `DD.MM.YYY`)* |
 
 
 Model-driven App
