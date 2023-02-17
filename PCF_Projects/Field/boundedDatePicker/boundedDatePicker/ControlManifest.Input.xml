@@ -9,7 +9,7 @@
 	preview-image		-> Image path that will be used on the customization screens to show a preview of the component, Optional
 	version				-> Defines the version of the component, Required
 	-->
-	<control namespace="ftk.PCFControls" constructor="boundedDatePicker" version="0.0.1" display-name-key="boundedDatePicker" description-key="boundedDatePicker description" control-type="standard">
+	<control namespace="PCFControls" constructor="boundedDatePicker" version="0.0.3" display-name-key="boundedDatePicker" description-key="Enables Fluent UI Date picker with with option to set available minimum and maximum dates" control-type="standard">
 		<!--
 		name 				-> Name of the property, Required
 		display-name-key	-> Localized string key-name, Required
@@ -24,22 +24,22 @@
 			<type>DateAndTime.DateOnly</type>
 			<type>Whole.None</type>
 		</type-group>
-		<property name="date" display-name-key="b_date" description-key="Property_Desc_Key" of-type="DateAndTime.DateOnly" usage="bound" required="true" />
-		<property name="showWeekNumbers" display-name-key="i_showWeekNumbers" description-key="Property_Desc_Key" usage="input" of-type="Enum" required="true">
+		<property name="date" display-name-key="Date" description-key="Selected date column" of-type="DateAndTime.DateOnly" usage="bound" required="true" />
+		<property name="showWeekNumbers" display-name-key="Show week numbers" description-key="Shows week numbers in date picker" usage="input" of-type="Enum" required="true">
 			<value name="Yes" display-name-key="CC_Enable_Filtering" description-key="CC_Enable_Filtering_Desc" default="true">true</value>
 			<value name="No" display-name-key="CC_Disable_Filtering" description-key="CC_Disable_Filtering_Desc">false</value>
 		</property>
-		<property name="restrictMinimunDate" display-name-key="i_restrictMinimunDate" description-key="Property_Desc_Key" usage="input" of-type="Enum" required="true">
-			<value name="Yes" display-name-key="CC_Enable_Filtering" description-key="CC_Enable_Filtering_Desc" default="true">true</value>
-			<value name="No" display-name-key="CC_Disable_Filtering" description-key="CC_Disable_Filtering_Desc">false</value>
+		<property name="restrictMinimunDate" display-name-key="Restrict min date" description-key="Restricts selectable minimum date" usage="input" of-type="Enum" required="true">
+			<value name="No" display-name-key="CC_Disable_Filtering" description-key="CC_Disable_Filtering_Desc" default="true">false</value>
+			<value name="Yes" display-name-key="CC_Enable_Filtering" description-key="CC_Enable_Filtering_Desc">true</value>
 		</property>
-		<property name="restrictMaximunDate" display-name-key="i_restrictMaximunDate" description-key="Property_Desc_Key" usage="input" of-type="Enum" required="true">
-			<value name="Yes" display-name-key="CC_Enable_Filtering" description-key="CC_Enable_Filtering_Desc" default="true">true</value>
-			<value name="No" display-name-key="CC_Disable_Filtering" description-key="CC_Disable_Filtering_Desc">false</value>
+		<property name="restrictMaximunDate" display-name-key="Restrict max date" description-key="Restricts selectable maxmimum date" usage="input" of-type="Enum" required="true">
+			<value name="No" display-name-key="CC_Disable_Filtering" description-key="CC_Disable_Filtering_Desc" default="true">false</value>
+			<value name="Yes" display-name-key="CC_Enable_Filtering" description-key="CC_Enable_Filtering_Desc" >true</value>
 		</property>
-		<property name="minDate" display-name-key="i_mindate" description-key="Property_Desc_Key" of-type-group="RestrictDate-Parameter" usage="input" required="false" default-value="2020-01-01T15:00:00" />
-		<property name="maxDate" display-name-key="i_maxdate" description-key="Property_Desc_Key" of-type-group="RestrictDate-Parameter" usage="input" required="false" default-value="2020-12-30T15:00:00" />
-		<property name="formatDate" display-name-key="i_formatDate" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="input" required="true" default-value="DD.MM.YYYY" />
+		<property name="minDate" display-name-key="Min date" description-key="Minimum date for date picker" of-type-group="RestrictDate-Parameter" usage="input" required="false" default-value="" />
+		<property name="maxDate" display-name-key="Max date" description-key="Maximum date for date picker" of-type-group="RestrictDate-Parameter" usage="input" required="false" default-value="" />
+		<property name="formatDate" display-name-key="Date format" description-key="Date format to be displayed (default: dd.MM.yyyy)" of-type="SingleLine.Text" usage="input" required="true" default-value="DD.MM.YYYY" />
 		<resources>
 			<code path="index.ts" order="1" />
 		</resources>
